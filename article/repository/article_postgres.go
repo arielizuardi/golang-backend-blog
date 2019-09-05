@@ -22,12 +22,12 @@ func (r *PostgresArticleRepository) CreateArticle(a *model.Article) error {
 
 // GetArticleByID ...
 func (r *PostgresArticleRepository) GetArticleByID(id int) (*model.Article, error) {
-	var result *model.Article
-	if err := r.conn.Where("id", id).First(&result).Error; err != nil {
+	var result model.Article
+	if err := r.conn.Where(model.Article{ID: id}).First(&result).Error; err != nil {
 		return nil, err
 	}
 
-	return result, nil
+	return &result, nil
 }
 
 // GetAllArticle ...
