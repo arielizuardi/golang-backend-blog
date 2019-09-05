@@ -24,6 +24,10 @@ func (r *PostgresArticleRepository) CreateArticle(a *model.Article) error {
 func (r *PostgresArticleRepository) GetArticleByID(id int) (*model.Article, error) {
 	var result model.Article
 	if err := r.conn.Where(model.Article{ID: id}).First(&result).Error; err != nil {
+		if err == gorm.ErrRecordNotFound {
+			return nil, nil
+		}
+
 		return nil, err
 	}
 
