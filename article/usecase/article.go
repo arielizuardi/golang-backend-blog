@@ -2,6 +2,7 @@ package usecase
 
 import (
 	"github.com/arielizuardi/sph-backend-coding-challenge/article"
+	"github.com/arielizuardi/sph-backend-coding-challenge/model"
 	"gopkg.in/go-playground/validator.v9"
 )
 
@@ -18,7 +19,7 @@ func NewArticleUsecase(r article.Repository) *Usecase {
 }
 
 // CreateArticle create an article
-func (u *Usecase) CreateArticle(a *article.Article) error {
+func (u *Usecase) CreateArticle(a *model.Article) error {
 	if err := u.validate.Struct(a); err != nil {
 		return err
 	}
@@ -27,11 +28,11 @@ func (u *Usecase) CreateArticle(a *article.Article) error {
 }
 
 // GetArticleByID get article by given id
-func (u *Usecase) GetArticleByID(id int) (*article.Article, error) {
+func (u *Usecase) GetArticleByID(id int) (*model.Article, error) {
 	return u.repository.GetArticleByID(id)
 }
 
 // GetAllArticle return all articles stored in repository
-func (u *Usecase) GetAllArticle() ([]*article.Article, error) {
+func (u *Usecase) GetAllArticle() ([]*model.Article, error) {
 	return u.repository.GetAllArticle()
 }

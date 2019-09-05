@@ -52,7 +52,7 @@ docker.stop:
 docker.restart: docker.stop docker.start
 
 docker.sph.app.stop: 
-		docker stop sph_sph-server_1
+		docker stop sph-backend-coding-challenge_sph-server_1
 
 test.unit:
 		go test $(UNIT_TEST_PACKAGES) --cover -race -v -count 1

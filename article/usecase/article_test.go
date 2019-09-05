@@ -4,22 +4,22 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/arielizuardi/sph-backend-coding-challenge/article"
 	"github.com/arielizuardi/sph-backend-coding-challenge/article/mocks"
 	"github.com/arielizuardi/sph-backend-coding-challenge/article/usecase"
+	"github.com/arielizuardi/sph-backend-coding-challenge/model"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestCreateArticle(t *testing.T) {
 	testCases := []struct {
 		name          string
-		article       *article.Article
+		article       *model.Article
 		repoError     error
 		expectedError error
 	}{
 		{
 			"Create Article with required fields",
-			&article.Article{
+			&model.Article{
 				Title:   "my-title",
 				Content: "this-is-content",
 				Author:  "my-author",
@@ -29,7 +29,7 @@ func TestCreateArticle(t *testing.T) {
 		},
 		{
 			"Create Article with missing fields",
-			&article.Article{
+			&model.Article{
 				Title:   "my-title",
 				Content: "this-is-content",
 			},
@@ -38,7 +38,7 @@ func TestCreateArticle(t *testing.T) {
 		},
 		{
 			"Create Article and repository return error",
-			&article.Article{
+			&model.Article{
 				Title:   "my-title",
 				Content: "this-is-content",
 				Author:  "my-author",
@@ -66,14 +66,14 @@ func TestGetArticleByID(t *testing.T) {
 	testCases := []struct {
 		name          string
 		articleID     int
-		returnArticle *article.Article
+		returnArticle *model.Article
 		repoError     error
 		expectedError error
 	}{
 		{
 			"Article exists with given ID",
 			1,
-			&article.Article{
+			&model.Article{
 				ID:      1,
 				Title:   "my-title",
 				Content: "this-is-content",
@@ -118,13 +118,13 @@ func TestGetAllArticle(t *testing.T) {
 	testCases := []struct {
 		name string
 
-		returnArticles []*article.Article
+		returnArticles []*model.Article
 		repoError      error
 		expectedError  error
 	}{
 		{
 			"Number of articles greater than zero",
-			[]*article.Article{
+			[]*model.Article{
 				{ID: 1, Title: "my-title", Content: "this-is-content", Author: "my-author"},
 			},
 			nil,
