@@ -1,4 +1,4 @@
-APP=sph-backend-coding-challenge
+APP=golang-backend-blog
 APP_EXECUTABLE="./out/$(APP)"
 ALL_PACKAGES=$(shell go list ./... | grep -v "mocks" | grep -v "vendor" | grep -v "cmd")
 NON_VENDOR_PACKAGES=$(shell go list ./... | grep -v "vendor")
@@ -6,7 +6,7 @@ UNIT_TEST_PACKAGES=$(shell go list ./... | grep -v "it")
 # optionally pass this from command line
 MIGRATION_ROOT?=./db/migration
 # optionally pass this from command line
-DB?=sph_development
+DB?=blog
 # optionally pass this from command line
 PORT?=8080
 ENV_LOCAL_TEST=\
@@ -51,17 +51,13 @@ docker.stop:
 
 docker.restart: docker.stop docker.start
 
-docker.sph.app.stop: 
-		docker stop sph-backend-coding-challenge_sph-server_1
+docker.blog.app.stop: 
+		docker stop golang-backend-blog_golang-backend-blog-server_1
 
 test.unit:
-		go test $(UNIT_TEST_PACKAGES) --cover -race -v -count 1
+		go test ./...
 
-test.update: docker.sph.app.stop 
-		$(ENV_LOCAL_TEST) \
-		go test -tags=golden ./it -v -count=1 -update
-
-test.integration: docker.sph.app.stop
+test.integration: docker.blog.app.stop
 		$(ENV_LOCAL_TEST) \
 		go test -tags=integration ./it -v -count=1
 

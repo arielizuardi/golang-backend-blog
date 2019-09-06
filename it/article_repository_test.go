@@ -3,8 +3,8 @@
 package it_test
 
 import (
-	"github.com/arielizuardi/sph-backend-coding-challenge/article/repository"
-	"github.com/arielizuardi/sph-backend-coding-challenge/model"
+	"github.com/arielizuardi/golang-backend-blog/article/repository"
+	"github.com/arielizuardi/golang-backend-blog/model"
 )
 
 func (p *PostgresRepositoryTestSuite) TestPostgresArticleRepository_CreateArticle() {

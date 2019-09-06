@@ -5,13 +5,13 @@ services:
     image: postgres
     environment:
       POSTGRES_PASSWORD: mysecretpassword
-      POSTGRES_DB: sph_development
+      POSTGRES_DB: blog
       POSTGRES_HOST: postgres
       POSTGRES_USER: postgres
     ports:
       - 5432:5432
 
-  sph-server:
+  golang-backend-blog-server:
       build: .
       depends_on:
         - postgres
@@ -19,7 +19,7 @@ services:
       environment:
         - DB_HOST=postgres
         - DB_PORT=5432
-        - DB_NAME=sph_development
+        - DB_NAME=blog
         - DB_USER=postgres
         - DB_PASS=mysecretpassword
         - LOG_LEVEL=INFO
@@ -27,5 +27,5 @@ services:
         - ENV=development
       ports:
         - 8080:8080
-      command: sh -c "sleep 10; ./sph-backend-coding-challenge migrate; ./sph-backend-coding-challenge start"
+      command: sh -c "sleep 10; ./golang-backend-blog migrate; ./golang-backend-blog start"
 

@@ -1,6 +1,6 @@
 package article
 
-import "github.com/arielizuardi/sph-backend-coding-challenge/model"
+import "github.com/arielizuardi/golang-backend-blog/model"
 
 // Repository defines article repository contract
 type Repository interface {

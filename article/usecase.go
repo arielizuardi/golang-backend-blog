@@ -1,6 +1,6 @@
 package article
 
-import "github.com/arielizuardi/sph-backend-coding-challenge/model"
+import "github.com/arielizuardi/golang-backend-blog/model"
 
 // Usecase defines article usecase contract
 type Usecase interface {

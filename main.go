@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	"github.com/arielizuardi/sph-backend-coding-challenge/config"
-	"github.com/arielizuardi/sph-backend-coding-challenge/server"
+	"github.com/arielizuardi/golang-backend-blog/config"
+	"github.com/arielizuardi/golang-backend-blog/server"
 	"github.com/jinzhu/gorm"
 )
 

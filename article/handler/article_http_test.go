@@ -7,9 +7,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/arielizuardi/sph-backend-coding-challenge/article/handler"
-	"github.com/arielizuardi/sph-backend-coding-challenge/article/mocks"
-	"github.com/arielizuardi/sph-backend-coding-challenge/model"
+	"github.com/arielizuardi/golang-backend-blog/article/handler"
+	"github.com/arielizuardi/golang-backend-blog/article/mocks"
+	"github.com/arielizuardi/golang-backend-blog/model"
 	"github.com/labstack/echo"
 	"github.com/stretchr/testify/assert"
 	"gopkg.in/go-playground/validator.v9"

@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"github.com/arielizuardi/sph-backend-coding-challenge/model"
+	"github.com/arielizuardi/golang-backend-blog/model"
 	"github.com/jinzhu/gorm"
 )
 

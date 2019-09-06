@@ -1,8 +1,8 @@
 package usecase
 
 import (
-	"github.com/arielizuardi/sph-backend-coding-challenge/article"
-	"github.com/arielizuardi/sph-backend-coding-challenge/model"
+	"github.com/arielizuardi/golang-backend-blog/article"
+	"github.com/arielizuardi/golang-backend-blog/model"
 	"gopkg.in/go-playground/validator.v9"
 )
 

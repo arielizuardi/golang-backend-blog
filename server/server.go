@@ -7,9 +7,9 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/arielizuardi/sph-backend-coding-challenge/article/handler"
-	"github.com/arielizuardi/sph-backend-coding-challenge/article/repository"
-	"github.com/arielizuardi/sph-backend-coding-challenge/article/usecase"
+	"github.com/arielizuardi/golang-backend-blog/article/handler"
+	"github.com/arielizuardi/golang-backend-blog/article/repository"
+	"github.com/arielizuardi/golang-backend-blog/article/usecase"
 
 	"github.com/jinzhu/gorm"
 	"github.com/labstack/echo"

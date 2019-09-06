@@ -19,9 +19,9 @@ import (
 	"github.com/labstack/echo"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/arielizuardi/sph-backend-coding-challenge/config"
-	"github.com/arielizuardi/sph-backend-coding-challenge/model"
-	"github.com/arielizuardi/sph-backend-coding-challenge/server"
+	"github.com/arielizuardi/golang-backend-blog/config"
+	"github.com/arielizuardi/golang-backend-blog/model"
+	"github.com/arielizuardi/golang-backend-blog/server"
 )
 
 type e2eTestSuite struct {

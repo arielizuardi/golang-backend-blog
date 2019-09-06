@@ -6,7 +6,7 @@ import (
 	"log"
 	"testing"
 
-	"github.com/arielizuardi/sph-backend-coding-challenge/config"
+	"github.com/arielizuardi/golang-backend-blog/config"
 
 	"github.com/golang-migrate/migrate"
 	"github.com/jinzhu/gorm"
