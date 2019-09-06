@@ -17,3 +17,14 @@ You should see
     "pong":"ok"
 }
 ```
+
+Perform integration & e2e test:
+```
+make docker.start
+make test.integration
+```
+
+Perform unit test:
+```
+make test.unit
+```
