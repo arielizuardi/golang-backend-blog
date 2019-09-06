@@ -62,7 +62,7 @@ test.integration: docker.blog.app.stop
 		go test -tags=integration ./it -v -count=1
 
 migrate.up:
-		migrate -path $(MIGRATION_ROOT) -database "postgres://postgres:mysecretpassword@localhost:5432/$(DB)?sslmode=disable" up
+		migrate -verbose -path $(MIGRATION_ROOT) -database "postgres://postgres:mysecretpassword@localhost:5432/$(DB)?sslmode=disable" up
 
 migrate.down:
 		migrate -path $(MIGRATION_ROOT) -database "postgres://postgres:mysecretpassword@localhost:5432/$(DB)?sslmode=disable" down

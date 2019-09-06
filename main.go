@@ -3,9 +3,13 @@ package main
 import (
 	"log"
 
+	_ "github.com/golang-migrate/migrate/database/postgres"
+	_ "github.com/golang-migrate/migrate/source/file"
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
+
 	"github.com/arielizuardi/golang-backend-blog/config"
 	"github.com/arielizuardi/golang-backend-blog/server"
-	"github.com/jinzhu/gorm"
 )
 
 func main() {

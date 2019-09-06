@@ -3,6 +3,7 @@ package server
 import (
 	"context"
 	"fmt"
+	"net/http"
 	"os"
 	"os/signal"
 	"time"
@@ -36,6 +37,12 @@ func (s *Server) Start() {
 	e.POST("/articles", articleHandler.HandleCreateArticle)
 	e.GET("/articles", articleHandler.HandleGetAllArticle)
 	e.GET("/articles/:article_id", articleHandler.HandleGetArticleByID)
+
+	e.GET("/ping", func(c echo.Context) error {
+		return c.JSON(http.StatusOK, map[string]string{
+			"pong": "ok",
+		})
+	})
 
 	go func() {
 		if err := e.Start(appPort); err != nil {
