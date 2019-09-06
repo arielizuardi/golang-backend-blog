@@ -46,3 +46,8 @@ func Load() error {
 func DBConnectionURL() string {
 	return fmt.Sprintf("postgres://%s:%s@%s:5432/%s?sslmode=disable", appConfig.dbUsername, appConfig.dbPassword, appConfig.dbHost, appConfig.dbName)
 }
+
+// Port return server port
+func Port() int {
+	return appConfig.appPort
+}

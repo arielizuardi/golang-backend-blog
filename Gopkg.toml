@@ -26,16 +26,12 @@
 
 
 [[constraint]]
-  name = "github.com/golang-migrate/migrate"
-  version = "3.5.4"
-
-[[constraint]]
   name = "github.com/jinzhu/gorm"
   version = "1.9.10"
 
 [[constraint]]
-  name = "github.com/lib/pq"
-  version = "1.2.0"
+  name = "github.com/labstack/echo"
+  version = "4.1.10"
 
 [[constraint]]
   name = "github.com/sirupsen/logrus"
